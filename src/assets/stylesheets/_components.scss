@@ -1,0 +1,14 @@
+.title-w-icon:hover .icon-container {
+  display: block;
+  fill: #000000;
+}
+
+.icon-container {
+  display: none;
+}
+
+.icon-container > svg {
+  height: 1rem;
+  width: 1rem;
+  cursor: pointer;
+}

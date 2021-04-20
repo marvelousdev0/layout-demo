@@ -1,0 +1,23 @@
+.unstyled-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.doc-sidebar__navitem {
+  cursor: pointer;
+  padding: 0.5rem 0;
+  font-size: smaller;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.doc-sidebar__navitem:hover {
+  color: #f97316;
+}
+
+.navitem-active {
+  background-color: #e5e7eb;
+  border-left: 4px solid #f97316;
+  color: #f97316;
+}

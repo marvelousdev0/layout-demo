@@ -1,0 +1,142 @@
+<div>
+  <h1 className='content-h1 '>
+    <a href='#content-h1' className='content-h1 no-style-a flex align-center title-w-icon'>
+      <span className='text mr-1'>Content</span>
+    </a>
+  </h1>
+  <h2 id='heading-1'>
+    <a href='#heading-1' className='heading-1 no-style-a flex align-center title-w-icon'>
+      <span className='text mr-1'>Heading One</span>
+    </a>
+  </h2>
+  <p>
+    If you just add a class to your icon on click then remove it this will apply your rotation. Here is a working
+    plunkr using font awesome and a simple rotation. This is just a simple example, you will want to make use of
+    vendor prefixes and be aware that css transitions do not work in older browsers.
+  </p>
+  <h2 id='heading-2'>
+    <a href='#heading-2' className='heading-2 no-style-a flex align-center title-w-icon'>
+      <span className='text mr-1'>Heading Two</span>
+    </a>
+  </h2>
+  <p>
+    With an approach that uses scale animations, the first step is to read elements that tell you the size the
+    menu needs to be both when it’s collapsed, and when it’s expanded. It may be that for some situations you
+    can’t get both of these bits of information in one go, and that you need to — say — toggle some classes around
+    to be able to read the various states of the component. If you need to do that, however, be cautious:
+    getBoundingClientRect() (or offsetWidth and offsetHeight) forces the browser to run styles and layout passes
+    if styles have changed since they were last run.
+  </p>
+  <h2 id='heading-3'>
+    <a href='#heading-3' className='heading-3 no-style-a flex align-center title-w-icon'>
+      <span className='text mr-1'>Heading Three</span>
+    </a>
+  </h2>
+  <p>
+    So what can you do about this? Well you can apply a counter-transform to the contents, so for example if the
+    container is scaled down to 1/5th of its normal size, you can scale the contents up by 5x to prevent the
+    contents being squashed. There are two things to notice about that: The counter-transform is also a scale
+    operation. This is good because it can also be accelerated, just like the animation on the container. You may
+    need to ensure that the elements being animated get their own compositor layer (enabling the GPU to help out),
+    and for that you can add will-change: transform to the element or, if you need to support older browsers,
+    backface-visiblity: hidden. The counter-transform must be calculated per frame. This is where things can get a
+    little trickier, because assuming that the animation is in CSS and uses an easing function, the easing itself
+    needs to be countered when animating the counter-transform. However, calculating the inverse curve for — say —
+    cubic-bezier(0, 0, 0.3, 1) isn’t all that obvious. It may be tempting, then, to consider animating the effect
+    using JavaScript. After all, you could then use an easing equation to calculate the scale and counter-scale
+    values per frame. The downside of any JavaScript-based animation is what happens when the main thread (where
+    your JavaScript runs) is busy with some other task. The short answer is that your animation can stutter or
+    halt altogether, which isn’t great for UX.
+  </p>
+  <h2 id='heading-4'>
+    <a href='#heading-4' className='heading-4 no-style-a flex align-center title-w-icon'>
+      <span className='text mr-1'>Heading Four</span>
+    </a>
+  </h2>
+  <p>
+    So there you have it, a way to do performant clip animations using scale transforms. In a perfect world, it
+    would be great to see clip animations be accelerated (there’s a Chromium bug for that made by Jake Archibald),
+    but until we get there, you should be cautious when animating clip or clip-path, and definitely avoid
+    animating width or height. It would also be handy to use Web Animations for effects like this, because they
+    have a JavaScript API but can run on the compositor thread if you only animate transform and opacity.
+    Unfortunately, support for Web Animations isn’t great, though you could use progressive enhancement to use
+    them if they’re available.
+  </p>
+  <h2 id='heading-5'>
+    <a href='#heading-5' className='heading-5 no-style-a flex align-center title-w-icon'>
+      <span className='text mr-1'>Heading Five</span>
+    </a>
+  </h2>
+  <p>
+    When it comes to collapsing the element back down, there are two options: update the CSS animation to run in
+    reverse rather than forwards. This will work just fine, but the "feel" of the animation will be reversed, so
+    if you used an ease-out curve, the reverse will feel eased in, which will make it feel sluggish. A more
+    appropriate solution is to create a second pair of animations for collapsing the element. These can be created
+    in exactly the same way as the expand keyframe animations, but with swapped start and end values.
+  </p>
+  <h2 id='heading-6'>
+    <a href='#heading-6' className='heading-6 no-style-a flex align-center title-w-icon'>
+      <span className='text mr-1'>Heading Six</span>
+    </a>
+  </h2>
+  <p>
+    React is a JavaScript library, and so we’ll assume you have a basic understanding of the JavaScript language. If you
+    don’t feel very confident, we recommend going through a JavaScript tutorial to check your knowledge level and enable
+    you to follow along this guide without getting lost. It might take you between 30 minutes and an hour, but as a
+    result you won’t have to feel like you’re learning both React and JavaScript at the same time.
+  </p>
+  <h2 id='heading-7'>
+    <a href='#heading-7' className='heading-7 no-style-a flex align-center title-w-icon'>
+      <span className='text mr-1'>Heading Seven</span>
+    </a>
+  </h2>
+  <p>
+    In React, sharing state is accomplished by moving it up to the closest common ancestor of the components that need
+    it. This is called “lifting state up”. We will remove the local state from the TemperatureInput and move it into the
+    Calculator instead.
+
+    If the Calculator owns the shared state, it becomes the “source of truth” for the current temperature in both
+    inputs. It can instruct them both to have values that are consistent with each other. Since the props of both
+    TemperatureInput components are coming from the same parent Calculator component, the two inputs will always be in
+    sync.
+
+    Let’s see how this works step by step.
+
+    First, we will replace this.state.temperature with this.props.temperature in the TemperatureInput component. For
+    now, let’s pretend this.props.temperature already exists, although we will need to pass it from the Calculator in
+    the future.
+  </p>
+  <h2 id='heading-8'>
+    <a href='#heading-8' className='heading-8 no-style-a flex align-center title-w-icon'>
+      <span className='text mr-1'>Heading Eight</span>
+    </a>
+  </h2>
+  <p>
+    Now, no matter which input you edit, this.state.temperature and this.state.scale in the Calculator get updated. One
+    of the inputs gets the value as is, so any user input is preserved, and the other input value is always recalculated
+    based on it.
+
+    Let’s recap what happens when you edit an input:
+
+    React calls the function specified as onChange on the DOM <input>. In our case, this is the handleChange method in
+    the TemperatureInput component.
+    The handleChange method in the TemperatureInput component calls this.props.onTemperatureChange() with the new
+    desired value. Its props, including onTemperatureChange, were provided by its parent component, the Calculator.
+    When it previously rendered, the Calculator had specified that onTemperatureChange of the Celsius TemperatureInput
+    is the Calculator’s handleCelsiusChange method, and onTemperatureChange of the Fahrenheit TemperatureInput is the
+    Calculator’s handleFahrenheitChange method. So either of these two Calculator methods gets called depending on which
+    input we edited.
+    Inside these methods, the Calculator component asks React to re-render itself by calling this.setState() with the
+    new input value and the current scale of the input we just edited.
+    React calls the Calculator component’s render method to learn what the UI should look like. The values of both
+    inputs are recomputed based on the current temperature and the active scale. The temperature conversion is performed
+    here.
+    React calls the render methods of the individual TemperatureInput components with their new props specified by the
+    Calculator. It learns what their UI should look like.
+    React calls the render method of the BoilingVerdict component, passing the temperature in Celsius as its props.
+    React DOM updates the DOM with the boiling verdict and to match the desired input values. The input we just edited
+    receives its current value, and the other input is updated to the temperature after conversion.
+
+    Every update goes through the same steps so the inputs stay in sync.
+  </p>
+</div>
